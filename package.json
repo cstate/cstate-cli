@@ -1,0 +1,37 @@
+{
+	"name": "cstate-cli",
+	"version": "1.0.0",
+	"description": "CLI tool for managing cState status pages.",
+	"main": "lib/index.js",
+	"type": "module",
+	"bin": {
+		"cstate": "./bin/cstate.js"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"cstate",
+		"hugo",
+		"golang",
+		"go",
+		"statuspage",
+		"templates",
+		"writing",
+		"automation",
+		"status",
+		"cli"
+	],
+	"author": "cState by Mantas Vilčinskas",
+	"license": "MIT",
+	"dependencies": {
+		"chalk": "^4.1.2",
+		"commander": "^12.1.0",
+		"execa": "^9.5.2",
+		"fs-extra": "^11.2.0",
+		"inquirer": "^12.3.0",
+		"js-yaml": "^4.1.0",
+		"moment-timezone": "^0.5.46",
+		"slugify": "^1.6.6"
+	}
+}
