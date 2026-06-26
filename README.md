@@ -24,7 +24,7 @@ The main help command for `cstate-cli`.
 
 ### `cstate create`
 
-Creates a new incident or informational post in your cState `content/issues` directory.
+Creates a new incident, informational post, or v7 operational record.
 
 **Example:**
 
@@ -32,7 +32,7 @@ Creates a new incident or informational post in your cState `content/issues` dir
 cstate create
 ```
 
-This will guide you through an interactive prompt to create a new post.
+This will guide you through an interactive prompt. Incidents still write to `content/issues`. v7 records write to their matching sections, such as `content/experiments`, `content/release-notes`, `content/evals`, or `content/agent-runs`.
 
 ### `cstate draft`
 
@@ -50,8 +50,17 @@ This will ask you to choose a template and then guide you through an interactive
 
 *   `Incident Post`
 *   `Maintenance`
-*   `Experiment`
 *   `Postmortem`
+*   `Experiment`
+*   `Release Note`
+*   `Changelog Entry`
+*   `Roadmap Update`
+*   `Eval Report`
+*   `Agent Run`
+*   `Decision Record`
+*   `Research Note`
+
+Experiment drafts now use `content/experiments` with `recordType: experiment` frontmatter instead of incident-shaped informational posts.
 
 ### `cstate dev`
 

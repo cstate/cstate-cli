@@ -16,7 +16,7 @@
 		"cstate": "./bin/cstate.js"
 	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "node scripts/verify-v7-templates.mjs"
 	},
 	"keywords": [
 		"cstate",

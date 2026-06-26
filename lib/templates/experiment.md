@@ -1,8 +1,9 @@
----
-title: "{{title}}"
-date: {{date}}
-resolved: true
-informational: true
----
+{{frontmatter}}
 
-*In Progress* - We are currently running an experiment on our systems to improve performance and reliability. You may experience minor intermittent issues. We will post updates here. {{< track "{{date}}" >}}
+## What is changing?
+
+Describe the experiment and the audience included in the test.
+
+## What should people watch?
+
+List the signals that will decide whether this experiment continues.
