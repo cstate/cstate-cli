@@ -32,10 +32,33 @@ for (const recordType of recordTypes) {
 		recordType
 	);
 	assert.match(frontmatter, new RegExp(`recordType: ${recordType.recordType}`));
+	assert.match(frontmatter, new RegExp(`recordKind: ${recordType.recordKind}`));
+	assert.doesNotMatch(frontmatter, /^kind:/m);
 	assert.doesNotMatch(frontmatter, /section: issue/);
 	assert.doesNotMatch(frontmatter, /resolved:/);
 	assert.match(frontmatter, /affected:\n  - "API"/);
 }
+
+const experimentType = recordTypes.find((recordType) => recordType.recordType === 'experiment');
+const experimentFrontmatter = generateRecordFrontmatter(
+	{
+		title: 'Search rollout',
+		state: 'active',
+		severity: 'notice',
+		pin: true,
+		summary: 'Testing search ranking with a small group.',
+		affected: ['Search'],
+	},
+	'2026-05-09 09:00:00',
+	experimentType
+);
+assert.match(experimentFrontmatter, /recordType: experiment/);
+assert.match(experimentFrontmatter, /recordKind: experiment/);
+assert.match(experimentFrontmatter, /state: active/);
+assert.match(experimentFrontmatter, /severity: notice/);
+assert.match(experimentFrontmatter, /pin: true/);
+assert.match(experimentFrontmatter, /summary: "Testing search ranking with a small group."/);
+assert.doesNotMatch(experimentFrontmatter, /^kind:/m);
 
 const incidentFrontmatter = generateFrontmatter(
 	{

@@ -34,6 +34,8 @@ cstate create
 
 This will guide you through an interactive prompt. Incidents still write to `content/issues`. v7 records write to their matching sections, such as `content/experiments`, `content/release-notes`, `content/evals`, or `content/agent-runs`.
 
+Experiment records use `recordType: experiment` and `recordKind: experiment`. The CLI also asks whether an experiment should use `severity: notice` for component-level notice placement, whether it should set `pin: true` for the homepage announcement band, and an optional `summary`. It never writes a frontmatter key named `kind`.
+
 ### `cstate draft`
 
 Creates a new post from a pre-defined template.
@@ -60,7 +62,7 @@ This will ask you to choose a template and then guide you through an interactive
 *   `Decision Record`
 *   `Research Note`
 
-Experiment drafts now use `content/experiments` with `recordType: experiment` frontmatter instead of incident-shaped informational posts.
+Experiment drafts now use `content/experiments` with `recordType: experiment`, `recordKind: experiment`, `state`, `severity`, `pin`, `affected`, and optional `summary` frontmatter instead of incident-shaped informational posts.
 
 ### `cstate dev`
 
